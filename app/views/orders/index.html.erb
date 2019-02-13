@@ -1,0 +1,64 @@
+<%=render "shared/navbaramelioration" %>
+
+<br>
+
+<!-- Titlebar -->
+<div id="titlebar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h2>Réservation</h2>
+
+				<!-- Breadcrumbs -->
+				<nav id="breadcrumbs">
+					<ul>
+						<li><a href="#">Accueil</a></li>
+						<li>Réservation</li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Titlebar / End -->
+
+
+<!-- Content -->		
+<div class="container">		
+		
+	<div class="boxed-widget opening-hours summary margin-top-0">
+		<h3><i class="fa fa-calendar-check-o"></i> Récapitulatif de la réservation</h3>
+		<ul>
+			<li>Date de réservation<span> Aujourd'hui</span></li>
+			<li>Nombre de lit(s) <span><%=@occupied_beds %> lit(s)</span></li>
+			<li>Nombre de personne(s) <span><%=@number_of_person %> personne(s)</span></br></li>
+
+			<li class="total-costs">Montant total <span><%=@price%> €</span></li>
+		</ul>
+		<br>
+
+		<div class="buttoncommand"><%= button_to "Confirmer la réservation", { action: "create" }, form_class: "new-thing" %> </div>
+	</div>
+
+</div>
+<!-- Container / End -->
+
+
+<%=render "shared/footer" %>
+
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+<script type="text/javascript" src="scripts/chosen.min.js"></script>
+<script type="text/javascript" src="scripts/slick.min.js"></script>
+<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+<script type="text/javascript" src="scripts/counterup.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>

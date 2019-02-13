@@ -1,0 +1,40 @@
+ 
+
+
+
+ .main-search-container {
+
+background-image: url("http://www.lapelerine.com/uploads/Image/00/158_287_SANTIAGO.jpg");
+   opacity: 0.9;
+   max-width: auto;
+   height: 100%;
+
+ }
+
+
+ #white {
+ 	color: white;
+ 	font-weight: bold;
+ 	text-align: center;
+ }
+
+ #whitetoo {
+ 	color: white;
+ 	font-weight: bold;
+ 	text-align: center;
+ }
+
+
+ #conteneur {
+
+ 	display: flex;
+ 	justify-content: space-around;
+ }
+
+
+ #x {
+
+ 	display: flex;
+ }
+
+ input[id="date_autre"]{ display: none; }

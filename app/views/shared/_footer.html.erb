@@ -1,0 +1,62 @@
+<!-- Footer
+================================================== -->
+<div id="footer" class="sticky-footer">
+	<!-- Main -->
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-8 col-sm-6">
+				<img class="footer-logo" src="/assets/dodorando-22a03762438157aee9fb9633faf2472af39a2ed48393c664d163d79a3d99fa7d.png" alt="">
+				<br><br>
+				<p>Réservez un logement chaleureux dans une auberge sur le Chemin de Compostelle.</p>
+			</div>
+			
+			<div class="col-md-4  col-sm-12">
+				<h4>Contactez nous !</h4>
+				<div class="text-widget">
+					<span>Quai François Mauriac, 75006 Paris</span> <br>
+					Téléphone : <span>07 60 51 60 31</span><br>
+					E-Mail :<span> thomasleoty@gmail.com</span>
+				</div>			
+			</div>
+			
+		</div>
+		
+		<!-- Copyright -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyrights"> © 2018 Fait avec amour par Colin, Alexandre, Thomas , Steve et Côme <3 </div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- Footer / End -->
+
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+
+<!-- Google Autocomplete -->
+<script>
+  function initAutocomplete() {
+    var input = document.getElementById('autocomplete-input');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (!place.geometry) {
+        window.alert("No details available for input: '" + place.name + "'");
+        return;
+      }
+    });
+
+	if ($('.main-search-input-item')[0]) {
+	    setTimeout(function(){ 
+	        $(".pac-container").prependTo("#autocomplete-container");
+	    }, 300);
+	}
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>

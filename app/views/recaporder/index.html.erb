@@ -1,0 +1,27 @@
+<!-- Container -->
+<div class="container">	
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="booking-confirmation-page">
+				<i class="fa fa-check-circle"></i>
+				<h2 class="margin-top-30">Merci pour votre réservation!</h2>
+				<p>Vous allez recevoir un email de confirmation </p>
+			</div>
+
+		</div>
+	</div>
+
+  <div class="boxed-widget opening-hours summary margin-top-0">
+		<h3><i class="fa fa-calendar-check-o"></i> Récapitulatif de la commande</h3>
+		<ul>
+			<li>Date de réservation<span> Du <%= @date[0] %> au <%= @date[1] %></span></li>
+			<li>Nombre de lit(s) <span><%= @number_of_bed %> lit(s)</span></li>
+			<li class="total-costs">Montant total <span><%= @total_price %> €</span></li>
+		</ul>	
+		<br>
+  	<%= link_to "Revenir à la page d'accueil", root_path %>
+	</div>
+
+</div>
+<!-- Container / End -->

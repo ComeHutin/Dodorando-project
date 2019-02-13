@@ -1,0 +1,119 @@
+
+<%=render "shared/navbaramelioration" %>
+
+<br>
+
+<!-- Titlebar
+================================================== -->
+<div id="titlebar" class="gradient">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="user-profile-titlebar">
+          <div class="user-profile-avatar"><img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwNzQzMTY2NDc4/will-smith-9542165-1-402.jpg" alt=""></div>
+          <div class="user-profile-name">
+            <h2>Bonjour <%= @user.first_name %> <%= @user.last_name %> !</h2>            
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Container
+================================================== -->
+<div class="container">
+  <div class="row sticky-wrapper">
+
+
+    <!-- Sidebar
+    ================================================== -->
+    <div class="col-lg-4 col-md-4 margin-top-0">
+       
+      <!-- Contact -->
+      <div class="boxed-widget margin-top-30 margin-bottom-50">
+        <h3>Contact</h3>
+        <ul class="listing-details-sidebar">
+          <li><i class="sl sl-icon-phone"></i> 06 07 08 09 10 </li>
+          <li><i class="fa fa-envelope-o"></i> <a href="#"><%= @user.email %></a></li>
+        </ul>        
+      </div>
+      <!-- Contact / End-->
+
+    </div>
+    <!-- Sidebar / End -->
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="col-lg-8 col-md-8 padding-left-30">        
+      <h3 class="margin-top-0 margin-bottom-40">Mes Réservations</h3>
+
+      <% @hosted_room.each do |room| %>  
+        <% @occupied_room = OccupiedRoom.find(room.occupied_room_id) %>  
+        <% @free_room = FreeRoom.find(@occupied_room.free_room_id) %>
+        <% @house = House.find(@free_room.house_id) %>
+        <% @city = City.find(@house.city_id) %>
+        <% @room_type = RoomType.find(@free_room.room_type_id) %>
+        <% @booking = Booking.find(@occupied_room.booking_id) %>
+      
+        <!-- Listing Item -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="listing-item-container list-layout">
+              <a href="listings-single-page.html" class="listing-item">
+                
+                <!-- Image -->
+                <div class="listing-item-image">
+                  <img src="http://aubergeferme-malgretout.com/img/chambre-chene2.jpg" alt="">
+                  <span class="tag"><%= @room_type.description %></span>
+                </div>
+                
+                <!-- Content -->
+                <div class="listing-item-content">
+                  <div class="listing-item-inner">                    
+                    <h3> <%= @house.name %> </h3>
+                    <span>1 Rue des Champs-Elysées, <%= @city.name %></span> <br> 
+                    <span><%= @free_room.price_of_the_night %>€/nuit</span>
+                  </div>
+                  <div class="listing-item-details"> Du <%= @booking.check_in %> Au <%= @booking.check_out %> </div>
+                </div>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Listing Item / End -->
+
+      <% end %>
+
+    </div>
+    <!-- Content / End -->
+
+  </div>
+</div>
+<!-- Container / End -->
+
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+<%=render "shared/footer" %>
+
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="scripts/mmenu.min.js"></script>
+<script type="text/javascript" src="scripts/chosen.min.js"></script>
+<script type="text/javascript" src="scripts/slick.min.js"></script>
+<script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+<script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+<script type="text/javascript" src="scripts/waypoints.min.js"></script>
+<script type="text/javascript" src="scripts/counterup.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/tooltips.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>

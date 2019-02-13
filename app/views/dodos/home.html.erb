@@ -1,0 +1,64 @@
+
+<%=render "shared/navbaramelioration" %>
+				
+<%=render "shared/banneramelioration" %>
+
+<%=render "shared/infosection" %>
+		
+<%=render "shared/mostpopular" %>
+
+<%=render "shared/footer" %>
+
+<% if user_signed_in? %>
+  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
+<% end %>
+
+
+<!-- Message d'alert apparaissant sur la page -->
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+
+<!-- Scripts -->
+<%= javascript_include_tag "jquery-2.2.0.min.js"%>
+<%= javascript_include_tag "mmenu.min.js" %>
+<%= javascript_include_tag "chosen.min.js" %>
+<%= javascript_include_tag "slick.min.js"%>
+<%= javascript_include_tag "rangeslider.min.js" %>
+<%= javascript_include_tag "magnific-popup.min.js" %>
+<%= javascript_include_tag "waypoints.min.js"%>
+<%= javascript_include_tag "counterup.min.js" %>
+<%= javascript_include_tag "jquery-ui.min.js" %>
+<%= javascript_include_tag "tooltips.min.js"%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

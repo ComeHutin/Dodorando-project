@@ -1,0 +1,5 @@
+<p>Bienvenue <%= @resource.first_name.to_s.capitalize %> <%= @resource.last_name.to_s.capitalize %>!</p>
+
+<p>Tu vas pouvoir réserver des logements mais avant il faut simplement que tu cliques sur le lien suivant pour confirmer ton inscription</p>
+
+<p><%= link_to 'Confirmer mon compte', confirmation_url(@resource, confirmation_token: @token) %></p>

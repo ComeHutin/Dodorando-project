@@ -1,0 +1,53 @@
+
+
+
+<!-- Content
+================================================== -->
+
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="booking-confirmation-page">
+				<i class="fa fa-check-circle"></i>
+				<h2 class="margin-top-30">Merci pour votre réservation!</h2>
+				<p>Vous allez recevoir un email de confirmation </p>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Container / End -->
+
+<h2> Voici le récapitulatif de votre commande !</h2>
+
+  <div class="boxed-widget opening-hours summary margin-top-0">
+				<h3><i class="fa fa-calendar-check-o"></i> Récapitulatif de la commande</h3>
+				<ul>
+					<li>Date de réservation<span> Aujourd'hui</span></li>
+					<li>Nombres de lits <span><%=@occupied_beds %> lits</span></li>
+					<li>Nombre de personne <span><%=@number_of_person %> personne(s)</span></br></li>
+
+					<li class="total-costs">Montant total <span><%=@price%> €</span></li>
+
+				</ul>
+<br>
+
+
+<div class="buttoncommand"><%= button_to "Confirmez la commande", { action: "create" }, form_class: "new-thing" %>
+</div>
+		
+</div>
+
+<h2> La commande a bien été validée </h2>
+<h3> Récapitulatif de la commande </h2>
+  <p>Vous avez reservé <%= @number_of_bed %> lit(s)</p>
+  <p>Du au </p>
+  <p> Pour un montant de <%= @total_price %> € </p>
+
+  <%= link_to "Page d'accueil", root_path %>
+
+
+
+
